@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table4 td {
+            width: 300px;
+        }
+
+        .table11 td {
+            padding: 10px;
+        }
+
+        .table9 td ,th{
+            padding: 20px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>table1</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>harry</td>
+                <td>28</td>
+                <td>britian</td>
+            </tr>
+            <tr>
+                <td>jihn</td>
+                <td>35</td>
+                <td>aze</td>
+
+            </tr>
+            <tr>
+                <td>nihad</td>
+                <td>65</td>
+                <td>hello</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+    <h2>table2</h2>
+    <table border="1" style="border-spacing: 20px;">
+        <thead>
+            <tr>
+                <th>product</th>
+                <th>quantity</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>butter</td>
+                <td>3 kilogram</td>
+            </tr>
+
+            <tr>
+                <td>milk</td>
+                <td>3 litres</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>table3</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>product</th>
+                <th>flavors</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="3">Milk</td>
+                <td>almond</td>
+            </tr>
+
+            <tr>
+                <!-- <td>3</td> -->
+                <td>mango</td>
+            </tr>
+
+            <tr>
+                <!-- <td>5</td> -->
+                <td>chocolate</td>
+            </tr>
+
+            <tr>
+                <td colspan="2">these are exclusive</td>
+                <!-- <td>8</td> -->
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>table5</h2>
+
+    <table border="1" style="width: 400px; height: 300px;" class="table4">
+        <tbody>
+
+            <tr>
+                <td rowspan="6">section</td>
+                <td rowspan="3">subsection1</td>
+                <td>text1</td>
+            </tr>
+
+            <tr>
+                <!-- <td>4</td> -->
+                <!-- <td>5</td> -->
+                <td>text2</td>
+            </tr>
+
+            <tr>
+                <!-- <td>7</td> -->
+                <!-- <td>8</td> -->
+                <td>text3</td>
+            </tr>
+
+            <tr>
+                <!-- <td>10</td> -->
+                <td rowspan="2">subsection2</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <!-- <td>13</td> -->
+                <!-- <td>14</td> -->
+                <td></td>
+            </tr>
+
+            <tr>
+                <!-- <td>16</td> -->
+                <td>subsection3</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>table7</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="3">1</td>
+                <td rowspan="3">2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+
+            <tr>
+                <!-- <td>4</td> -->
+                <!-- <td>5</td> -->
+                <td>6</td>
+                <td>7</td>
+            </tr>
+
+            <tr>
+                <!-- <td>8</td> -->
+                <!-- <td>9</td> -->
+                <td>10</td>
+                <td>11</td>
+            </tr>
+
+            <tr>
+                <td rowspan="3">12</td>
+                <td rowspan="3">13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+
+            <tr>
+                <!-- <td>16</td> -->
+                <!-- <td>17</td> -->
+                <td>18</td>
+                <td>19</td>
+            </tr>
+
+            <tr>
+                <!-- <td>20</td> -->
+                <!-- <td>21</td> -->
+                <td>22</td>
+                <td>23</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <h2>table8</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="3">
+                    Product
+                </th>
+            </tr>
+
+            <tr>
+                <th>No</th>
+                <th>P.Name</th>
+                <th>P.Count</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>1</td>
+                <td>Pen</td>
+                <td rowspan="3">50</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <!-- <td>5</td> -->
+                <td>Table</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <!-- <td>8</td> -->
+                <td>Pencil</td>
+            </tr>
+
+
+        </tbody>
+
+    </table>
+
+    <h2>table9</h2>
+
+    <table border="1" class="table9">
+        <tr>
+            <th colspan="6">Time Table</th>
+        </tr>
+        <tr>
+            <th rowspan="6">Hours</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+        </tr>
+        <tr>
+            <!-- <td rowspan="5"> </td> -->
+            <td>Computer</td>
+            <td>Maths</td>
+            <td>Computer</td>
+            <td>Maths</td>
+            <td>Arts</td>
+        </tr>
+        <tr>
+            <td>Computer</td>
+            <td>Maths</td>
+            <td>Computer</td>
+            <td>Maths</td>
+            <td>Arts</td>
+        </tr>
+        <tr>
+            <td colspan="6" class="lunch">LUNCH</td>
+        </tr>
+        <tr>
+            <!-- <td rowspan="2"> </td> -->
+            <td>Computer</td>
+            <td>Maths</td>
+            <td>Computer</td>
+            <td>Maths</td>
+            <td rowspan="2">Project</td>
+        </tr>
+        <tr>
+            <td>Computer</td>
+            <td>Maths</td>
+            <td>Computer</td>
+            <td>Maths</td>
+            <!-- <td></td> -->
+        </tr>
+    </table>
+
+    <h2>table10</h2>
+
+    <table border="1" style=" border-spacing: 3px; width: 500px;height: 200px;">
+        <tbody>
+            <tr>
+                <td rowspan="2"> 1</td>
+                <td>2</td>
+                <td rowspan="3">3</td>
+                <td colspan="2">4</td>
+                <!-- <td>5</td> -->
+                <td>6</td>
+            </tr>
+
+            <tr>
+                <!-- <td>7</td> -->
+                <td>8</td>
+                <!-- <td>9</td> -->
+                <td rowspan="2">10</td>
+                <td rowspan="2">11</td>
+                <td rowspan="2">12</td>
+            </tr>
+
+            <tr>
+                <td colspan="2">13</td>
+                <!-- <td>14</td> -->
+                <!-- <td>15</td> -->
+                <!-- <td>16</td> -->
+                <!-- <td>17</td> -->
+                <!-- <td>18</td> -->
+            </tr>
+
+            <tr>
+                <td colspan="3">19</td>
+                <!-- <td>20</td> -->
+                <!-- <td>21</td> -->
+                <td>22</td>
+                <td colspan="2"> 23</td>
+                <!-- <td>24</td> -->
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <h2>table11</h2>
+
+    <table border="1" class="table11">
+        <thead>
+            <tr>
+                <th>day/period</th>
+                <th>l</th>
+                <th>ll</th>
+                <th>lll</th>
+                <th>12:00-12:40</th>
+                <th>lV</th>
+                <th>V</th>
+                <th>Vl</th>
+                <th>Vll</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>Monday</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td rowspan="6">4</td>
+                <td colspan="3">5</td>
+                <!-- <td>6</td> -->
+                <!-- <td>7</td> -->
+                <td>8</td>
+            </tr>
+
+            <tr>
+                <th>Thuesday</th>
+                <td colspan="3">9</td>
+                <!-- <td>10</td> -->
+                <!-- <td>11</td> -->
+                <!-- <td></td> -->
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+            </tr>
+
+            <tr>
+                <th>Wednesday</th>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <!-- <td></td> -->
+                <td>20</td>
+                <td colspan="3">21</td>
+                <!-- <td>22</td> -->
+                <!-- <td>23</td> -->
+            </tr>
+
+            <tr>
+                <th>Thursday</th>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <!-- <td></td> -->
+                <td colspan="3">28</td>
+                <!-- <td>29</td> -->
+                <!-- <td>30</td> -->
+                <td>31</td>
+            </tr>
+
+            <tr>
+                <th>friday</th>
+                <td colspan="3">32</td>
+                <!-- <td>33</td> -->
+                <!-- <td>34</td> -->
+                <!-- <td></td> -->
+                <td>36</td>
+                <td>37</td>
+                <td>38</td>
+                <td>39</td>
+            </tr>
+
+            <tr>
+                <th>satursaday</th>
+                <td>40</td>
+                <td>41</td>
+                <td>42</td>
+                <!-- <td></td> -->
+                <td colspan="3">44</td>
+                <!-- <td>45</td> -->
+                <!-- <td>46</td> -->
+                <td>47</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>

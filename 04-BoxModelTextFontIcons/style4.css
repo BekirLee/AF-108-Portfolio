@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Dancing+Script:wght@400..700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 700px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: #007BFF;
+    margin-bottom: 16px;
+    width: 49%;
+    display: inline-block;
+    padding-bottom: 100px;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    width: 49%;
+    display: inline-block;
+}
+
+p.font {
+    font-family: "Big Shoulders Stencil", sans-serif;
+}
+
+.box {
+    width: 700px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(210, 149, 37);
+}
+
+.select-container {
+    text-align: center;
+    position: relative;
+}
+
+.custom-select {
+    width: 210px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #27445D;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+}

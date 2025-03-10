@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700&family=Roboto+Serif:wght@500&display=swap');
+
+body {
+    background-color: #f5f1e5;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+}
+
+h1 {
+    font-size: 100px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    color: black;
+    margin: 0;
+}
+
+.small-title {
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    color: #a57536;
+    display: block;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #a57536;
+    margin-top: -20px;
+}
+
+.description {
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+}
+
+.crafted {
+    font-size: 22px;
+    font-family: 'Dancing Script', cursive;
+    color: #a57536;
+    margin-top: 20px;
+}
+
+.footer {
+    background-color: #c4a98b;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+}

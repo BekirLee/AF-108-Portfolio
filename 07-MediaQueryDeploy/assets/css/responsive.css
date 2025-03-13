@@ -1,0 +1,39 @@
+@media(max-width:576px) {
+    .hamburgerBar {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .heroSeperator {
+        display: block;
+    }
+
+    .cols {
+        display: block;
+    }
+
+    .cols img {
+        margin-bottom: 20px;
+    }
+
+    .col1 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .cols img {
+        width: 100%;
+    }
+
+    .col2 {
+        margin: 0;
+    }
+
+    .container {
+        margin: 0 30px;
+    }
+
+}

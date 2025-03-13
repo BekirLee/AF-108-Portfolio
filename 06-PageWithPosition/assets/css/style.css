@@ -74,12 +74,23 @@
     padding: 15px;
     border: 1px solid #ddd;
     text-align: start;
+    position: relative;
 }
 
 .product img {
     width: 100%;
     max-height: 200px;
     object-fit: contain;
+}
+
+.sale {
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    top: 10px;
+    left: 0px;
+    color: #fff;
+    background-color: #000;
 }
 
 h4,

@@ -36,4 +36,32 @@
         margin: 0 30px;
     }
 
+    .categoryContent {
+        left: 35%;
+    }
+
+    /*  */
+
+    .product,
+    .prev,
+    .next {
+        display: none;
+    }
+
+    .product.active {
+        display: block !important;
+        width: 100%;
+    }
+
+    .productImg {
+        width: 100%;
+    }
+
+    .mainContainer {
+        margin: 0 20px;
+    }
+
+    .carousel {
+        display: block;
+    }
 }

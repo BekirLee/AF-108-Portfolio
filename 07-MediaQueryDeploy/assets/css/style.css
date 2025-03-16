@@ -323,8 +323,8 @@ button {
 
 footer {
     background-color: #333;
-    height: 480px;
-    padding: 0 100px;
+    height: 100%;
+    padding: 20px 100px;
     padding-top: 30px;
 }
 
@@ -335,7 +335,24 @@ footer li {
 .footerinfos {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 50px;
 }
+
+.terms {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.terms ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
 
 footer a,
 p {
@@ -560,5 +577,3 @@ a {
 .contact-info strong {
     font-weight: bold;
 }
-
-/* Responsive Design */

@@ -342,3 +342,223 @@ p {
     color: #fff;
     margin-bottom: 10px;
 }
+
+
+/*  */
+.exploreProducts {
+    display: flex;
+    margin-top: 90px;
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-content h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 16px;
+    padding: 10px;
+    margin: 25px 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.discover-btn {
+    background: transparent;
+    color: #000;
+    border: 2px solid black;
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: ease .2s;
+    cursor: pointer;
+}
+
+.discover-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.image-grid,
+.text-content {
+    width: 40%;
+}
+
+.item {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.itemsTop,
+.itemsBottom {
+    display: flex;
+}
+
+
+.item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.item h3 {
+    font-size: 18px;
+    padding-top: 65%;
+    font-weight: bold;
+    margin-bottom: 5px;
+    white-space: none;
+    width: 130px;
+    /* color: #aaaaaa; */
+}
+
+.item p {
+    font-size: 12px;
+    color: #aaaaaa;
+}
+
+
+/*  */
+
+.social {
+    margin-top: 60px;
+}
+
+.socialPhotos {
+    display: flex;
+}
+
+.socialPhotos img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.photoDivs {
+    width: 100%;
+}
+
+.socialContext {
+    margin-bottom: 60px;
+}
+
+.socialContext p {
+    color: #aaaaaa;
+    margin-top: 10px;
+}
+
+/*  */
+
+.newsletter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.newsletter-content h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.subscription-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.subscription-form input {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.subscription-form button {
+    background: black;
+    border: none;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscription-form button img {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex: 1;
+    font-size: 14px;
+}
+
+.contactRight,
+.contactLeft {
+    margin-top: 30px;
+}
+
+.contact-info ul li {
+    list-style: none;
+    font-weight: 700;
+    font-size: 16px;
+    color: #2a2a2a;
+    margin-bottom: 30px;
+}
+
+.contact-info ul li span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #aaa;
+}
+
+.contact-info p {
+    color: #333 !important;
+    margin-bottom: 10px;
+}
+
+.contact-info strong {
+    font-weight: bold;
+}
+
+/* Responsive Design */

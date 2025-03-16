@@ -64,4 +64,79 @@
     .carousel {
         display: block;
     }
+
+    .exploreProducts {
+        display: block;
+    }
+
+    .image-grid,
+    .text-content {
+        width: 100%;
+    }
+}
+
+@media (min-width:576px) and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exploreProducts {
+        display: block !important;
+    }
+
+    .image-grid,
+    .text-content {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .newsletter-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .newsletter-content {
+        padding-right: 0;
+    }
+
+    .subscription-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscription-form input {
+        width: 100%;
+    }
+
+    .subscription-form button {
+        width: 100%;
+    }
+
+    footer {
+        padding: 10px 20px 20px 20px;
+        height: 100%;
+    }
+
+    .footerinfos {
+        display: block;
+        text-align: center;
+    }
+
+    .side1,
+    .side2,
+    .side3 {
+        margin-top: 20px;
+    }
+
+    .logo {
+        display: block;
+        margin-bottom: 20px;
+    }
 }

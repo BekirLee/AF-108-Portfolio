@@ -1,0 +1,12 @@
+html {
+    max-width: 1264px !important;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+li {
+    list-style: none;
+}

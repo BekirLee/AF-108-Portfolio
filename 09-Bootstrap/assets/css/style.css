@@ -6,6 +6,11 @@ header {
     background-attachment: fixed;
 }
 
+.fa-solid.fa-bars {
+    display: none;
+    margin-left: auto;
+}
+
 ul li {
     line-height: 40px;
     font-weight: 700;
@@ -234,4 +239,61 @@ header h1 {
 
 .person-content {
     /* width: calc(100% - 150px); */
+}
+
+/* section-content */
+
+.section-content a {
+    font-size: 15px;
+    height: 25px;
+}
+
+.section-content .row-items {
+    padding-right: 10px !important;
+}
+
+
+.section-content .box-right {
+    width: 120px;
+    padding-left: 10px !important;
+}
+
+/* footer */
+
+.footer li {
+    width: 100%;
+    padding-left: 20px;
+    transition: all .2s;
+}
+
+.footer li::before {
+    content: "\f105";
+    font-family: "FontAwesome";
+    color: #8c979e;
+    position: absolute;
+    left: 0;
+    line-height: 38px;
+}
+
+.footer li:hover {
+    color: #300360;
+}
+
+/* media*/
+
+@media(max-width:758px) {
+    header .headerMenu {
+        display: none;
+    }
+
+    .fa-solid.fa-bars {
+        display: block;
+    }
+
+    .headerDiv {
+        display: flex !important;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
 }

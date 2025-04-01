@@ -1,36 +1,63 @@
-const dieselPrice = 0.9;
-const regularPrice = 1;
-const premiumPrice = 1.5;
+// task1
 
-let fuelType = prompt("Choose the Fuel:\n1. Diesel\n2. Regular Benzine\n3. Premium Benzin\n Choose (1, 2, 3):");
+// const dieselPrice = 0.9;
+// const regularPrice = 1;
+// const premiumPrice = 1.5;
 
-if (fuelType !== "1" && fuelType !== "2" && fuelType !== "3") {
-    alert("PLz choose the correct type of Fuel.");
-}
-else {
-    let quantity = prompt("Plz choose fuel amount(liter) that u want:");
-    let balance = parseFloat(prompt("Write ur current money amount:"));
+// let fuelType = prompt("Choose the Fuel:\n1. Diesel\n2. Regular Benzine\n3. Premium Benzin\n Choose (1, 2, 3):");
 
-    let fuelPrice;
-    switch (fuelType) {
-        case "1":
-            fuelPrice = dieselPrice;
+// if (fuelType !== "1" && fuelType !== "2" && fuelType !== "3") {
+//     alert("PLz choose the correct type of Fuel.");
+// }
+// else {
+//     let quantity = prompt("Plz choose fuel amount(liter) that u want:");
+//     let balance = parseFloat(prompt("Write ur current money amount:"));
+
+//     let fuelPrice;
+//     switch (fuelType) {
+//         case "1":
+//             fuelPrice = dieselPrice;
+//             break;
+//         case "2":
+//             fuelPrice = regularPrice;
+//             break;
+//         case "3":
+//             fuelPrice = premiumPrice;
+//             break;
+//     }
+
+//     let totalCost = fuelPrice * quantity;
+
+//     if (balance >= totalCost) {
+//         let remainingBalance = balance - totalCost;
+//         alert("Taken fuel: " + quantity + " litr\nAll amount: " + totalCost + " AZN\nLast amount: " + remainingBalance + " AZN");
+//     } else {
+//         let deficit = totalCost - balance;
+//         alert("General: " + totalCost + " AZN\nUr current amount: " + balance + " AZN\nU cant affort " + deficit);
+//     }
+// }
+
+
+// task2
+
+function showMonthsBySeason(season) {
+    switch (season.toLowerCase()) {
+        case "spring":
+            alert("Spring months: March, April, May");
             break;
-        case "2":
-            fuelPrice = regularPrice;
+        case "summer":
+            alert("Summer months: June, July, August");
             break;
-        case "3":
-            fuelPrice = premiumPrice;
+        case "autumn":
+            alert("Autumn months: September, October, November");
             break;
+        case "winter":
+            alert("Winter months: December, January, February");
+            break;
+        default:
+            alert("Invalid season entered! (Valid values: spring, summer, autumn, winter)");
     }
-
-    let totalCost = fuelPrice * quantity;
-
-    if (balance >= totalCost) {
-        let remainingBalance = balance - totalCost;
-        alert("Taken fuel: " + quantity + " litr\nAll amount: " + totalCost + " AZN\nLast amount: " + remainingBalance + " AZN");
-    } else {
-        let deficit = totalCost - balance;
-        alert("General: " + totalCost + " AZN\nUr current amount: " + balance + " AZN\nU cant affort " + deficit);
-    }
 }
+
+let season = prompt("Enter the season (spring, summer, autumn, winter):");
+showMonthsBySeason(season);

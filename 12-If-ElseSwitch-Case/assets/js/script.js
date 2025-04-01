@@ -41,6 +41,9 @@
 // task2
 
 function showMonthsBySeason(season) {
+    
+    // her birini eyni sekilde elemek ucun istifade etdim
+    
     switch (season.toLowerCase()) {
         case "spring":
             alert("Spring months: March, April, May");
@@ -55,7 +58,7 @@ function showMonthsBySeason(season) {
             alert("Winter months: December, January, February");
             break;
         default:
-            alert("Invalid season entered! (Valid values: spring, summer, autumn, winter)");
+            alert("Invalid season ! (values: spring, summer, autumn, winter)");
     }
 }
 

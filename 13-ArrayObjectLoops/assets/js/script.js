@@ -29,7 +29,7 @@ for (let i = 1; i <= 10; i++) {
 
 //TASK4
 
-let numbers = [12, 45, 67, 23, 89, 56, 34, 78, 98, 65];
+let numbers = [67, 54, 61, 35, 84, 42, 314, 42, 94, 5];
 let sum = 0;
 let index = 0;
 
@@ -38,8 +38,8 @@ while (index < numbers.length) {
     index++;
 }
 
-let average = sum / numbers.length;
-console.log(`Ədədi Orta: ${average}`);
+let avarage = sum / numbers.length;
+console.log(`Ədədi Orta: ${avarage}`);
 
 
 //TASK3
@@ -67,15 +67,15 @@ function findModulus(number, mod) {
     return number % mod;
 }
 
-let number = 25;  // Girilen ədəd
-let mod = 7;      // İstənilən mod
+let number = 209;
+let mod = 3;
 
 console.log(`Modulus: ${findModulus(number, mod)}`);
 
 
 //TASK6
 
-let arr = [19, 19, 2, 13, 196, 86, 35, 77];
+let arr = [19, 19, 2, 33, 14, 83, 320, 17];
 let max = arr[0];
 
 for (let i = 0; i < arr.length - 1; i++) {
@@ -92,7 +92,7 @@ console.log(`Ən Böyük Ədəd: ${max}`);
 
 //TASK9
 
-let arraay1 = [203, 19, 2, 13, 196, 86, 35, 77];
+let arraay1 = [203, 29, 12, 133, 1196, 8126, 335, 377];
 let searchNumber = 35;
 
 if (arraay1.includes(searchNumber)) {
@@ -103,7 +103,7 @@ if (arraay1.includes(searchNumber)) {
 
 
 //TASK10
-let array = [1, 23, 345, 56, 789, 12, 90, 123];
+let array = [12, 213, 1345, 56, 709, 32, 94, 23];
 
 let oneDigit = 0;
 let twoDigit = 0;

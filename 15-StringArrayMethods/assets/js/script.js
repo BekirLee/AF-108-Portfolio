@@ -71,7 +71,7 @@ function longestWord(str) {
 console.log(longestWord(sentence));
 
 
-// Task4
+// Task4()
 
 function findUppercaseWords(str) {
     const words = str.split(" ");
@@ -133,7 +133,7 @@ const str = "Why What When";
 console.log(getInitials(str));
 
 
-// Task7
+// Task7()
 
 // function shortenWords(str) {
 //     const words = str.split(" ");
@@ -231,7 +231,7 @@ function getAllHobbies(customers) {
 console.log(getAllHobbies(customers));
 
 
-// Task5
+// Task5()
 
 function generateRandomArray(length) {
     const arr = [];
@@ -242,6 +242,7 @@ function generateRandomArray(length) {
 }
 
 function getMinMax(arr) {
+    //for getting arr's elements
     const min = Math.min(...arr);
     const max = Math.max(...arr);
     return { min, max };

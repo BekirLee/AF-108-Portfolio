@@ -5,11 +5,11 @@ function popup(time) {
     let times = String(time);
     // console.log(typeof times)
     alert(times)
-    console.log(time)
+    // console.log(time)
 }
 
 window.onload = function () {
-    // popup(date)
+    popup(date)
 }
 
 

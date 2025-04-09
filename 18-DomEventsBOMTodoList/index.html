@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nihad</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/calculator.css">
 </head>
 
 <body>
@@ -19,12 +20,28 @@
         <ul class="todoList">
         </ul>
         <div>
-            
+
         </div>
     </div>
 
 
+    <div class="calculator" style="margin-left: 50px;">
+        <input type="number" id="num1" placeholder="1,">
+        <input type="number" id="num2" placeholder="2.">
+
+        <div class="buttons">
+            <button id="add" class="btns">+</button>
+            <button id="subtract" class="btns">−</button>
+            <button id="multiply" class="btns">×</button>
+            <button id="divide" class="btns">÷</button>
+        </div>
+
+        <input type="text" id="result" placeholder="Result num" disabled>
+    </div>
+
+
     <script src="./assets/js/todoList.js"></script>
+    <script src="./assets/js/calculator.js"></script>
 </body>
 
 </html>

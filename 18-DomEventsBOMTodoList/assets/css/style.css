@@ -30,3 +30,12 @@ ul {
 .submitDisabled {
     background-color: #ccc !important;
 }
+
+.addTodo,
+.clearAll {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    background-color: burlywood;
+    /* border-style: none; */
+}

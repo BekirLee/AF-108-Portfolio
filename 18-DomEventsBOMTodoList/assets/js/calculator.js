@@ -2,10 +2,12 @@ const num1 = document.getElementById("num1");
 const num2 = document.getElementById("num2");
 const result = document.getElementById("result");
 
-document.getElementById("add").onclick = () => calculate("+");
+document.getElementById('add').addEventListener('click', () => calculate('+'))
+// document.getElementById("add").onclick = () => calculate("+");
 document.getElementById("subtract").onclick = () => calculate("-");
 document.getElementById("multiply").onclick = () => calculate("*");
 document.getElementById("divide").onclick = () => calculate("/");
+
 
 function calculate(operator) {
     const n1 = parseFloat(num1.value);

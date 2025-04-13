@@ -71,7 +71,7 @@ loginForm.onsubmit = (e) => {
         }
 
         if (failedAttempts[username].count >= 5) {
-            failedAttempts[username].lockedUntil = Date.now() + 15 * 60 * 1000; // 15 dəq
+            failedAttempts[username].lockedUntil = Date.now() + 15 * 60 * 1000;
             showToast("5 uğursuz cəhd. Hesab 15 dəqiqə bloklanıb");
         } else {
             showToast("Şifrə yanlışdır");

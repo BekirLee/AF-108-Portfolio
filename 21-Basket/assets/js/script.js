@@ -1,7 +1,9 @@
 const products = [
-    { id: "p1", title: "Some products", price: 30, image: "https://picsum.photos/200/300" },
-    { id: "p2", title: "some products", price: 50, image: "https://picsum.photos/200/300" },
-    { id: "p3", title: "some products", price: 120, image: "https://picsum.photos/200/300" },
+    { id: "p1", title: "Some products1", price: 30, image: "https://picsum.photos/200/300" },
+    { id: "p2", title: "some products2", price: 50, image: "https://picsum.photos/200/300" },
+    { id: "p3", title: "some products3", price: 120, image: "https://picsum.photos/200/300" },
+    { id: "p4", title: "some products4", price: 20, image: "https://picsum.photos/200/300" },
+    { id: "p5", title: "some products5", price: 80, image: "https://picsum.photos/200/300" },
 ];
 
 const currentUser = localStorage.getItem("currentUser");

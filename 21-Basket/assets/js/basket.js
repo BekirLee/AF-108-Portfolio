@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <h6 class="title">${item.title}</h6>
                 <p class="category">${item.category || "General"}</p>
-                <p class="price">${item.price} AZN</p>
+                <p class="price">${item.price * item.count} AZN</p>
                 <div class="count-area">
                     <button class="minus-btn" ${item.count <= 1 ? "disabled" : ""}>-</button>
                     <p class="count">${item.count}</p>

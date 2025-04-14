@@ -5,8 +5,8 @@ const products = [
 ];
 
 const currentUser = localStorage.getItem("currentUser");
-const authNav = document.getElementById("authNav");
-const productList = document.getElementById("productList");
+const authNav = document.querySelector("#authNav");
+const productList = document.querySelector("#productList");
 
 function showToast(message, color = "linear-gradient(to right, #ff5f6d, #ffc371)") {
     Toastify({
@@ -24,6 +24,7 @@ function showNavbar() {
             authNav.innerHTML = `
                 <li class="nav-item"><a class="nav-link" href="#">Halo, ${currentUser}</a></li>
                 <li class="nav-item"><a class="nav-link" href="./pages/whislist.html" id="wishlistLink">Wishlist</a></li>
+                <li class="nav-item"><a class="nav-link" href="./pages/basket.html" id="basketLink">Basket</a></li>
                 <li class="nav-item"><a class="nav-link" href="#" id="logoutBtn">Logout</a></li>
             `;
         } else {
@@ -85,21 +86,59 @@ function renderProducts() {
     if (!productList) return;
 
     productList.innerHTML = products.map(product => `
-        <div class="col-md-4 mb-4">
+        <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
             <div class="card h-100 shadow-sm">
                 <img src="${product.image}" class="card-img-top" alt="${product.title}">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <h5 class="card-title">${product.title}</h5>
                     <p class="card-text">${product.price} AZN</p>
                     <i class="bi bi-heart heart-icon" data-product-id="${product.id}"></i>
+                    <button class="btn btn-primary mt-2 add-to-basket" data-product-id="${product.id}">
+                        Add to Basket
+                    </button>
                 </div>
             </div>
         </div>
-    `)
+    `).join('')
 
     setupWishlistListeners();
+    setupBasketListeners()
 }
+
 renderProducts();
+
+function setupBasketListeners() {
+    const addButtons = document.querySelectorAll(".add-to-basket");
+
+    addButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            if (!currentUser) {
+                showToast("Please login to add products to basket");
+                setTimeout(() => window.location.href = "./pages/login.html", 1500);
+                return;
+            }
+
+            const productId = button.dataset.productId;
+            const product = products.find(p => p.id === productId);
+
+            if (!product) return;
+
+            let basket = JSON.parse(localStorage.getItem("basket")) || [];
+
+            const existingItem = basket.find(p => p.id === product.id);
+
+            if (existingItem) {
+                existingItem.count += 1;
+            } else {
+                basket.push({ ...product, count: 1 });
+            }
+
+            localStorage.setItem("basket", JSON.stringify(basket));
+            showToast("Product added to basket!", "linear-gradient(to right, #00b09b, #96c93d)");
+        });
+    });
+}
+
 
 if (window.location.pathname.includes("whislist.html")) {
     if (!currentUser) {

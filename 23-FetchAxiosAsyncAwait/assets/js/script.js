@@ -3,22 +3,22 @@
 
 let products = [];
 
-document.addEventListener("DOMContentLoaded", () => {
-    axios.get("http://localhost:3000/products")
-        .then(response => {
-            products = response.data;
-            // localStorage.setItem("allProducts", JSON.stringify(products));
-            renderProducts(); // ürün geldikten sonra çağır
-
-            if (window.location.pathname.includes("whislist.html")) {
-                showWishlist(); // ✅ sadece ürün geldikten sonra çalışır
-            }
-        })
-        .catch(error => console.error("Hata:", error));
+document.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const response = await axios.get("http://localhost:3000/products");
+        products = response.data;
+        localStorage.setItem("allProducts", JSON.stringify(products));
+        renderProducts();
+        if (window.location.pathname.includes("whislist.html")) {
+            showWishlist(); // ✅ sadece ürün geldikten sonra çalışır
+        }
+    } catch (error) {
+        console.error("Hata:", error);
+        showToast("Error", "linear-gradient(to right, #ff5f6d, #ffc371)");
+    }
 
     showNavbar();
 });
-
 
 const currentUser = localStorage.getItem("currentUser");
 const authNav = document.querySelector("#authNav");

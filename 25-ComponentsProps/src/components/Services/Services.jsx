@@ -6,22 +6,23 @@ const Services = () => {
     {
       id: 1,
       name: "Ecommerce",
-      img: "",
+      img: "", // Buraya gerçek bir resim URL'si eklemelisiniz
       desc: "lorem1 dwaxiqdciuhowdm 3ei23qne qdnoi",
     },
     {
       id: 2,
-      name: "Responsive desig",
-      img: "",
+      name: "Responsive design",
+      img: "", // Buraya gerçek bir resim URL'si eklemelisiniz
       desc: "lorem1 dwaxiqdciuhowdm 3ei23qne qdnoi",
     },
     {
       id: 3,
-      name: "Webb security",
-      img: "",
+      name: "Web security",
+      img: "", // Buraya gerçek bir resim URL'si eklemelisiniz
       desc: "lorem1 dwaxiqdciuhowdm 3ei23qne qdnoi",
     },
   ];
+
   return (
     <div className="services">
       <h1 className="title">Services</h1>
@@ -29,14 +30,16 @@ const Services = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, expedita.
       </p>
 
-      {services.map((item, index) => {
-        <Service
-          key={item.id}
-          photo={item.img}
-          desc={item.desc}
-          name={item.name}
-        />;
-      })}
+      <div className="services-container">
+        {services.map((item) => (
+          <Service
+            key={item.id}
+            photo={item.img}
+            desc={item.desc}
+            name={item.name}
+          />
+        ))}
+      </div>
     </div>
   );
 };

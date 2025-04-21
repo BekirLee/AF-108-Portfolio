@@ -1,25 +1,28 @@
 import React from "react";
 import Service from "../Service/Service";
+import { TbBasketFilled } from "react-icons/tb";
+import { MdComputer } from "react-icons/md";
+import { FaLock } from "react-icons/fa";
 
 const Services = () => {
   const services = [
     {
       id: 1,
       name: "Ecommerce",
-      img: "", // Buraya gerçek bir resim URL'si eklemelisiniz
-      desc: "lorem1 dwaxiqdciuhowdm 3ei23qne qdnoi",
+      img: <TbBasketFilled />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.",
     },
     {
       id: 2,
       name: "Responsive design",
-      img: "", // Buraya gerçek bir resim URL'si eklemelisiniz
-      desc: "lorem1 dwaxiqdciuhowdm 3ei23qne qdnoi",
+      img: <MdComputer />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.",
     },
     {
       id: 3,
       name: "Web security",
-      img: "", // Buraya gerçek bir resim URL'si eklemelisiniz
-      desc: "lorem1 dwaxiqdciuhowdm 3ei23qne qdnoi",
+      img: <FaLock />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.",
     },
   ];
 
@@ -30,7 +33,16 @@ const Services = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, expedita.
       </p>
 
-      <div className="services-container">
+      <div
+        className="services-container"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          gap: "50px",
+        }}
+      >
         {services.map((item) => (
           <Service
             key={item.id}

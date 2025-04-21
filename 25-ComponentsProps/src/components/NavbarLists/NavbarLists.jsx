@@ -1,12 +1,14 @@
 import React from "react";
 
 const NavbarLists = () => {
-  const lists = ["Services", "Portfolio", "About", "Team", "Contact"];
+  const lists = ["SERVICES", "PORTFOLIO", "ABOUT", "TEAM", "CONTACT"];
 
   return (
     <ul>
       {lists.map((item, index) => (
-        <li key={index}>{item}</li>
+        <a href="#">
+          <li key={index}>{item}</li>
+        </a>
       ))}
     </ul>
   );

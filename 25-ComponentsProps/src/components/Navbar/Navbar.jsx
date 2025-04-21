@@ -5,7 +5,7 @@ import NavbarLists from "../NavbarLists/NavbarLists.jsx";
 const Navbar = () => {
   return (
     <>
-      <div className="container fixed-top">
+      <div className="container fixed-top" style={{ alignItems: "center" }}>
         <NavbarBrand />
         <NavbarLists />
       </div>

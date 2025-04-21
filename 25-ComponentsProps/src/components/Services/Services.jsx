@@ -27,9 +27,11 @@ const Services = () => {
   ];
 
   return (
-    <div className="services">
-      <h1 className="title">Services</h1>
-      <p className="titleP">
+    <div className="services" style={{ textAlign: "center" }}>
+      <h1 className="title" style={{ color: "#000", margin: "20px 0" }}>
+        Services
+      </h1>
+      <p className="titleP" style={{ color: "#000", margin: "50px 0" }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, expedita.
       </p>
 

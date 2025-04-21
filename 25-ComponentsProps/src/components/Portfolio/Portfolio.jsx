@@ -55,6 +55,8 @@ const Portfolio = () => {
         flexWrap: "nowrap",
         justifyContent: "space-between",
         textAlign: "center",
+        gap: "30px",
+        marginTop: "150px",
       }}
     >
       {items.map((item) => (

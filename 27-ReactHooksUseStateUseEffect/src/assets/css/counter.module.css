@@ -1,0 +1,66 @@
+.container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.counterBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.button {
+  font-size: 24px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #f76c6c;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.count {
+  font-size: 28px;
+  color: #fff;
+  min-width: 60px;
+}
+
+.customControl {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input {
+  width: 60px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.actionBtn {
+  padding: 8px 12px;
+  background-color: #fff;
+  color: #ff7f50;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}

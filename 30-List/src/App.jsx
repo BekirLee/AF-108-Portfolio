@@ -1,131 +1,61 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import Products from "./assets/Components/Products";
+import "./App.css";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [newProductName, setNewProductName] = useState("");
-  const [editingProductId, setEditingProductId] = useState(null);
-  const [editingProductName, setEditingProductName] = useState("");
+  const [loading, setLoading] = useState(true);
 
-  // Məhsulları gətirmək üçün API çağırışı
   useEffect(() => {
-    fetch("https://northwind.vercel.app/api/products")
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
+    fetchProducts();
   }, []);
 
-  // Yeni məhsul əlavə etmək
-  const addProduct = () => {
-    const newProduct = {
-      name: newProductName,
-    };
-
-    fetch("https://northwind.vercel.app/api/products", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-
-        setProducts([...products, data]);
-        setNewProductName("");
-      });
+  const fetchProducts = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get("https://fakestoreapi.com/products");
+      setProducts(res.data);
+    } catch (error) {
+      toast.error("Məhsullar alınarkən xəta baş verdi!");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  // Məhsul silmək
+  const addProduct = (newProduct) => {
+    setProducts((prev) => [...prev, newProduct]);
+    toast.success("Məhsul əlavə olundu!");
+  };
+
+  const updateProduct = (updatedProduct) => {
+    setProducts((prev) =>
+      prev.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
+    );
+    toast.success("Məhsul redaktə olundu!");
+  };
+
   const deleteProduct = (id) => {
-    fetch(`https://northwind.vercel.app/api/products/${id}`, {
-      method: "DELETE",
-    }).then(() => {
-      const index = products.findIndex((product) => product.id === id);
-      if (index !== -1) {
-        const updatedProducts = [...products];
-        updatedProducts.splice(index, 1);
-        setProducts(updatedProducts);
-      }
-    });
+    setProducts((prev) => prev.filter((p) => p.id !== id));
+    toast.success("Məhsul silindi!");
   };
 
-  const updateProduct = (id) => {
-    const updatedProduct = {
-      name: editingProductName,
-    };
-
-    fetch(`https://northwind.vercel.app/api/products/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedProduct),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(
-          products.map((product) =>
-            product.id === id
-              ? { ...product, name: editingProductName }
-              : product
-          )
-        );
-        setEditingProductId(null);
-        setEditingProductName("");
-      });
+  const resetProducts = () => {
+    setProducts([]);
+    toast.success("Bütün məhsullar sıfırlandı!");
   };
 
   return (
-    <div>
-      <h1>Nihads Products</h1>
-
-      {/* Yeni məhsul əlavə et */}
-      <div>
-        <input
-          type="text"
-          placeholder="Yeni məhsul adı"
-          value={newProductName}
-          onChange={(e) => setNewProductName(e.target.value)}
-        />
-        <button onClick={addProduct}>Add</button>
-      </div>
-
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {editingProductId === product.id ? (
-              <div>
-                <input
-                  type="text"
-                  value={editingProductName}
-                  onChange={(e) => setEditingProductName(e.target.value)}
-                />
-                <button onClick={() => updateProduct(product.id)}>
-                  Update
-                </button>
-                <button onClick={() => setEditingProductId(null)}>
-                  Cancel
-                </button>
-              </div>
-            ) : (
-              <div>
-                {product.name}
-                <button
-                  onClick={() =>
-                    setEditingProductId(product.id) &&
-                    setEditingProductName(product.name)
-                  }
-                >
-                  Edit
-                </button>
-                <button onClick={() => deleteProduct(product.id)}>
-                  Delete
-                </button>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
+    <div className="App">
+      <Products
+        products={products}
+        loading={loading}
+        addProduct={addProduct}
+        updateProduct={updateProduct}
+        deleteProduct={deleteProduct}
+        resetProducts={resetProducts}
+      />
     </div>
   );
 }

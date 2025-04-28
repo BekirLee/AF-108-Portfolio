@@ -1,35 +1,133 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [products, setProducts] = useState([]);
+  const [newProductName, setNewProductName] = useState("");
+  const [editingProductId, setEditingProductId] = useState(null);
+  const [editingProductName, setEditingProductName] = useState("");
+
+  // Məhsulları gətirmək üçün API çağırışı
+  useEffect(() => {
+    fetch("https://northwind.vercel.app/api/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  // Yeni məhsul əlavə etmək
+  const addProduct = () => {
+    const newProduct = {
+      name: newProductName,
+    };
+
+    fetch("https://northwind.vercel.app/api/products", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+
+        setProducts([...products, data]);
+        setNewProductName("");
+      });
+  };
+
+  // Məhsul silmək
+  const deleteProduct = (id) => {
+    fetch(`https://northwind.vercel.app/api/products/${id}`, {
+      method: "DELETE",
+    }).then(() => {
+      const index = products.findIndex((product) => product.id === id);
+      if (index !== -1) {
+        const updatedProducts = [...products];
+        updatedProducts.splice(index, 1);
+        setProducts(updatedProducts);
+      }
+    });
+  };
+
+  const updateProduct = (id) => {
+    const updatedProduct = {
+      name: editingProductName,
+    };
+
+    fetch(`https://northwind.vercel.app/api/products/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(
+          products.map((product) =>
+            product.id === id
+              ? { ...product, name: editingProductName }
+              : product
+          )
+        );
+        setEditingProductId(null);
+        setEditingProductName("");
+      });
+  };
 
   return (
-    <>
+    <div>
+      <h1>Nihads Products</h1>
+
+      {/* Yeni məhsul əlavə et */}
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <input
+          type="text"
+          placeholder="Yeni məhsul adı"
+          value={newProductName}
+          onChange={(e) => setNewProductName(e.target.value)}
+        />
+        <button onClick={addProduct}>Add</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            {editingProductId === product.id ? (
+              <div>
+                <input
+                  type="text"
+                  value={editingProductName}
+                  onChange={(e) => setEditingProductName(e.target.value)}
+                />
+                <button onClick={() => updateProduct(product.id)}>
+                  Update
+                </button>
+                <button onClick={() => setEditingProductId(null)}>
+                  Cancel
+                </button>
+              </div>
+            ) : (
+              <div>
+                {product.name}
+                <button
+                  onClick={() =>
+                    setEditingProductId(product.id) &&
+                    setEditingProductName(product.name)
+                  }
+                >
+                  Edit
+                </button>
+                <button onClick={() => deleteProduct(product.id)}>
+                  Delete
+                </button>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -21,7 +21,7 @@ export default function TodoForm() {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <button type="submit">Əlavə et</button>
+      <button type="submit">Elave et</button>
     </form>
   );
 }

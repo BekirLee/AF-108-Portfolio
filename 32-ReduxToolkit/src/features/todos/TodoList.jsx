@@ -14,7 +14,7 @@ export default function TodoList() {
 
       {todos.length > 0 && (
         <button onClick={() => dispatch(deleteAllTodos())}>
-          Bütün todoları sil
+          Butun todolari sil
         </button>
       )}
     </div>

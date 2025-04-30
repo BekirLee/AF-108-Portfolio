@@ -35,7 +35,7 @@ export default function AuthForm() {
       />
       <button type="submit">{formData.isLogin ? 'Login' : 'Register'}</button>
       <p onClick={() => setFormData({ ...formData, isLogin: !formData.isLogin })}>
-        {formData.isLogin ? 'Hesabınız yoxdur? Qeydiyyatdan keçin' : 'Hesabınız var? Giriş edin'}
+        {formData.isLogin ? 'Hesabiniz yoxdur? Qeydiyyatdan kecin' : 'Hesabiniz var? Giris edin'}
       </p>
     </form>
   );

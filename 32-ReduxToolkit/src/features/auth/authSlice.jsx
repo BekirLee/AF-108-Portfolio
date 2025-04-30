@@ -14,7 +14,7 @@ const authSlice = createSlice({
       state.user = action.payload;
       state.isAuthenticated = true;
       localStorage.setItem('user', JSON.stringify(action.payload));
-      toast.success('Qeydiyyat uğurla tamamlandı!');
+      toast.success('Qeydiyyat ugurla tamamlandi!');
     },
     login: (state, action) => {
       state.user = action.payload;
@@ -26,7 +26,7 @@ const authSlice = createSlice({
       state.user = null;
       state.isAuthenticated = false;
       localStorage.removeItem('user');
-      toast.info('Çıxış etdiniz.');
+      toast.info('Cixis etdiniz.');
     },
   },
 });

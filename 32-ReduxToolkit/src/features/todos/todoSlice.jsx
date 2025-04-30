@@ -11,20 +11,19 @@ const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       const newTodo = {
-        // yeni id
         id: nanoid(),
         text: action.payload,
         completed: false,
       };
       state.todos.push(newTodo);
-      toast.success('Todo əlavə olundu!');
+      toast.success('Todo elave olundu!');
     },
     updateTodo: (state, action) => {
       const { id, newText } = action.payload;
       const todo = state.todos.find(todo => todo.id === id);
       if (todo) {
         todo.text = newText;
-        toast.info('Todo yeniləndi.');
+        toast.info('Todo yenilendi.');
       }
     },
     deleteTodo: (state, action) => {
@@ -33,7 +32,7 @@ const todoSlice = createSlice({
     },
     deleteAllTodos: (state) => {
       state.todos = [];
-      toast.error('Bütün todolar silindi.');
+      toast.error('Butun todolar silindi.');
     },
   },
 });
@@ -41,4 +40,3 @@ const todoSlice = createSlice({
 export const { addTodo, updateTodo, deleteTodo, deleteAllTodos } = todoSlice.actions;
 export default todoSlice.reducer;
 
-// features/todos/todosSlice.js

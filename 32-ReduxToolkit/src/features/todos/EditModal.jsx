@@ -21,7 +21,7 @@ export default function EditModal({ todo, onClose }) {
         onChange={(e) => setNewText(e.target.value)}
       />
       <button onClick={handleSave}>Yadda saxla</button>
-      <button onClick={onClose}>Bağla</button>
+      <button onClick={onClose}>Bagla</button>
     </div>
   );
 }

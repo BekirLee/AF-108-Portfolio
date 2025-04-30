@@ -11,6 +11,7 @@ const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       const newTodo = {
+        // yeni id
         id: nanoid(),
         text: action.payload,
         completed: false,
@@ -39,3 +40,5 @@ const todoSlice = createSlice({
 
 export const { addTodo, updateTodo, deleteTodo, deleteAllTodos } = todoSlice.actions;
 export default todoSlice.reducer;
+
+// features/todos/todosSlice.js

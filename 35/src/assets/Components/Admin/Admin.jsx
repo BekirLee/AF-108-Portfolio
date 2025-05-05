@@ -10,10 +10,8 @@ const AdminPanel = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
 
-  // Modal açma/kapama için state
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Ürünleri almak için
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
@@ -22,12 +20,10 @@ const AdminPanel = () => {
     dispatch(deleteProduct(productId));
   };
 
-  // Modal açma
   const openModal = () => {
     setIsModalOpen(true);
   };
 
-  // Modal kapama
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -36,10 +32,8 @@ const AdminPanel = () => {
     <div>
       <h1>Admin Paneli</h1>
 
-      {/* "Ekle" Butonu, butona tıklandığında modal açılır */}
       <button onClick={openModal}>Ürün Ekle</button>
 
-      {/* Modal'ı sadece isModalOpen true olduğunda göster */}
       {isModalOpen && <AddProductForm closeModal={closeModal} />}
 
       <h2>Ürün Listesi</h2>

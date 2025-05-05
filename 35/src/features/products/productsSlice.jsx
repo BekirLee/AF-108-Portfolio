@@ -1,8 +1,5 @@
-// features/products/productSlice.js
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Ürünleri almayı sağlamak için önceki fetchProducts kodu burada
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
@@ -12,7 +9,6 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
-// Ürün eklemek için Thunk
 export const addProduct = createAsyncThunk(
   "products/addProduct",
   async (newProduct) => {
@@ -28,14 +24,13 @@ export const addProduct = createAsyncThunk(
   }
 );
 
-// Ürün silmek için Thunk
 export const deleteProduct = createAsyncThunk(
   "products/deleteProduct",
   async (productId) => {
     await fetch(`http://localhost:3000/products/${productId}`, {
       method: "DELETE",
     });
-    return productId; // Silinen ürünün ID'sini döndürüyoruz.
+    return productId;
   }
 );
 
@@ -49,10 +44,10 @@ const productSlice = createSlice({
         return action.payload;
       })
       .addCase(addProduct.fulfilled, (state, action) => {
-        state.push(action.payload); // Yeni ürünü ekliyoruz
+        state.push(action.payload);
       })
       .addCase(deleteProduct.fulfilled, (state, action) => {
-        return state.filter((product) => product.id !== action.payload); // Silinen ürünü listeden çıkarıyoruz
+        return state.filter((product) => product.id !== action.payload);
       });
   },
 });

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../../features/products/productsSlice";
-import "../../css/modal.css"; // Modal için stil
+import "../../css/modal.css";
 
 const AddProductForm = ({ closeModal }) => {
   const dispatch = useDispatch();
@@ -22,12 +22,11 @@ const AddProductForm = ({ closeModal }) => {
       description: formData.description,
       price: parseFloat(formData.price),
     };
-    dispatch(addProduct(newProduct)); // Redux ile ürün ekle
-    setFormData({ name: "", description: "", price: "" }); // Formu sıfırlama
-    closeModal(); // Modal'ı kapatma
+    dispatch(addProduct(newProduct));
+    setFormData({ name: "", description: "", price: "" });
+    closeModal();
   };
 
-  // Modal bileşeni
   return (
     <div className="modal-overlay">
       <div className="modal-content">
